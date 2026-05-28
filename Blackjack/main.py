@@ -34,8 +34,14 @@ while True:
         else:
             print("Please enter a number lower than your balance, which is " + str(money) + ".")
 
-player_hand = []
-used_deck = deck.copy()
-print(used_deck)
-while True:
 
+
+#Game Loop
+while True:
+    player_hand = []
+    used_deck = deck.copy()
+    for i in range(2):
+        card_selector = random.randint(0, len(used_deck) - 1)
+        player_hand.append(used_deck[card_selector])
+    print('Your hand is ' + str(player_hand[1]) + ' and ' + str(player_hand[0]))
+    break
