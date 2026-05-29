@@ -39,9 +39,14 @@ while True:
 #Game Loop
 while True:
     player_hand = []
+    bot_hand = []
     used_deck = deck.copy()
     for i in range(2):
         card_selector = random.randint(0, len(used_deck) - 1)
         player_hand.append(used_deck[card_selector])
+        used_deck.pop(card_selector)
+        card_selector = random.randint(0, len(used_deck) - 1)
+        bot_hand.append(used_deck[card_selector])
+        used_deck.pop(card_selector)
     print('Your hand is ' + str(player_hand[1]) + ' and ' + str(player_hand[0]))
-    break
+    print(bot_hand)
