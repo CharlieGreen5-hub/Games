@@ -49,4 +49,17 @@ while True:
         bot_hand.append(used_deck[card_selector])
         used_deck.pop(card_selector)
     print('Your hand is ' + str(player_hand[1]) + ' and ' + str(player_hand[0]))
-    print(bot_hand)
+    print("The opponent's hand has been dealt.")
+    player_card_value = 0
+    while True:
+        for i in range(len(player_hand)):
+            if str(player_hand[i].split(' ',1)[0]) != 'Ace':
+                player_card_value += values[str(player_hand[int(i)].split(' ', 1)[0])]
+            elif str(player_hand[i].split(' ',1)[0]) == 'Ace':
+                if player_card_value <= 10:
+                    player_card_value += 11
+                elif player_card_value > 10:
+                    player_card_value += 1
+        print('Your hand value is ' + str(player_card_value))
+        break
+    break
