@@ -41,6 +41,13 @@ while True:
     player_hand = []
     bot_hand = []
     used_deck = deck.copy()
+    print('Dealing now', end=" ")
+    time.sleep(0.5)
+    print('.', end=" ")
+    time.sleep(0.5)
+    print('.', end=" ")
+    time.sleep(0.5)
+    print('.')
     for i in range(2):
         card_selector = random.randint(0, len(used_deck) - 1)
         player_hand.append(used_deck[card_selector])
@@ -49,7 +56,9 @@ while True:
         bot_hand.append(used_deck[card_selector])
         used_deck.pop(card_selector)
     print('Your hand is ' + str(player_hand[1]) + ' and ' + str(player_hand[0]))
+    time.sleep(0.5)
     print("The opponent's hand has been dealt.")
+    time.sleep(0.5)
     player_card_value = 0
     while True:
         for i in range(len(player_hand)):
@@ -61,5 +70,4 @@ while True:
                 elif player_card_value > 10:
                     player_card_value += 1
         print('Your hand value is ' + str(player_card_value))
-        break
-    break
+        time.sleep(0.5)
