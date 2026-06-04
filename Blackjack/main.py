@@ -3,15 +3,15 @@ import time
 
 # Deck setup
 
-ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
-suits = ['Spades', 'Hearts', 'Clubs', 'Diamonds']
-values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,'8': 8, '9': 9,'10': 10, 'Jack': 10, 'Queen': 10, 'King': 10}
+ranks = ['2 ', '3 ', '4 ', '5 ', '6 ', '7 ', '8 ', '9 ', '10 ', 'J ', 'Q ', 'K ', 'A ']
+suits = ['♠', '♥', '♣', '♦']
+values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,'8': 8, '9': 9,'10': 10, 'J': 10, 'Q': 10, 'K': 10}
 deck = []
 for i in range(13):
-    deck.append(ranks[i] + ' of ' + suits[0])
-    deck.append(ranks[i] + ' of ' + suits[1])
-    deck.append(ranks[i] + ' of ' + suits[2])
-    deck.append(ranks[i] + ' of ' + suits[3])
+    deck.append(ranks[i] + suits[0])
+    deck.append(ranks[i] + suits[1])
+    deck.append(ranks[i] + suits[2])
+    deck.append(ranks[i] + suits[3])
 
 # Money Loading
 
@@ -55,19 +55,27 @@ while True:
         card_selector = random.randint(0, len(used_deck) - 1)
         bot_hand.append(used_deck[card_selector])
         used_deck.pop(card_selector)
-    print('Your hand is ' + str(player_hand[1]) + ' and ' + str(player_hand[0]))
+    print('Your cards are ' + str(player_hand[1]) + ' and ' + str(player_hand[0]))
     time.sleep(0.5)
-    print("The opponent's hand has been dealt.")
+    print("The opponent's hand has been dealt.\nThe Dealer's upcard is " + bot_hand[0])
     time.sleep(0.5)
     player_card_value = 0
+    bot_card_value = 0
     while True:
         for i in range(len(player_hand)):
-            if str(player_hand[i].split(' ',1)[0]) != 'Ace':
+            if str(player_hand[i].split(' ',1)[0]) != 'A':
                 player_card_value += values[str(player_hand[int(i)].split(' ', 1)[0])]
-            elif str(player_hand[i].split(' ',1)[0]) == 'Ace':
+            elif str(player_hand[i].split(' ',1)[0]) == 'A':
                 if player_card_value <= 10:
                     player_card_value += 11
                 elif player_card_value > 10:
                     player_card_value += 1
+        for i in range(len(bot_hand)):
+            if str(bot_hand[i].split(' ',1)[0]) != 'A':
+                bot_card_value += values[str(bot_hand[int(i)].split(' ', 1)[0])]
+            elif str(bot_hand[i].split(' ',1)[0]) == 'A':
+                if bot_card_value <= 10:
+                    bot_card_value += 11
+                elif bot_card_value > 10:
+                    bot_card_value += 1
         print('Your hand value is ' + str(player_card_value))
-        time.sleep(0.5)
