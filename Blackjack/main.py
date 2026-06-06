@@ -79,3 +79,20 @@ while True:
                 elif bot_card_value > 10:
                     bot_card_value += 1
         print('Your hand value is ' + str(player_card_value))
+        player_action = input('You can choose to [HIT] or [STAY].\n> ')
+        if player_action.upper() == 'HIT':
+            print('Drawing a card', end=" ")
+            time.sleep(0.5)
+            print('.', end=" ")
+            time.sleep(0.5)
+            print('.', end=" ")
+            time.sleep(0.5)
+            print('.')
+            card_selector = random.randint(0, len(used_deck) - 1)
+            player_hand.append(used_deck[card_selector])
+            print('You drew the ' + used_deck[card_selector])
+            used_deck.pop(card_selector)
+            time.sleep(0.5)
+            print('Your cards are ' + player_hand[0], end = '')
+            for i in range((len(player_hand)-1)):
+                print(' and ' + player_hand[i+1], end = '')
