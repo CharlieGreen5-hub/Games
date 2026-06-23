@@ -165,10 +165,10 @@ while money > 0:
                 break
 
             if splittable == 2:
-                if player_card_value > 21:
+                if player_card_value > 21 and first_hand_bust == 0:
                     print("Your first hand bust!")
                     first_hand_bust = 1
-                if split_card_value > 21:
+                if split_card_value > 21 and second_hand_bust == 0:
                     print("Your second hand bust!")
                     second_hand_bust = 1
                 if first_hand_bust == 1 and second_hand_bust == 1:
@@ -200,11 +200,11 @@ while money > 0:
                         money += (split_bet * 2)
                     break
 
-                if first_hand_end == 1 and second_hand_end == 1:
+                if first_hand_end == 1 or first_hand_bust == 1 and second_hand_end == 1 or second_hand_bust == 1:
                     main_hand_end = 1
 
                 if main_hand_end == 1 and bot_card_value >= 17:
-                    if player_card_value > bot_card_value:
+                    if player_card_value > bot_card_value and first_hand_bust != 1:
                         print("Your first hand is bigger than the dealer's hand.")
                         money += bet * 2
                     elif bot_card_value > player_card_value:
@@ -213,7 +213,7 @@ while money > 0:
                         print("Your first hand tied with the dealer. Your bet was returned.")
                         money += bet
 
-                    if split_card_value > bot_card_value:
+                    if split_card_value > bot_card_value and second_hand_bust != 1:
                         print("Your second hand is bigger than the dealer's hand.")
                         money += bet * 2
                         break
@@ -221,9 +221,11 @@ while money > 0:
                     elif bot_card_value > split_card_value:
                         print("The dealer's hand is bigger than your second hand.")
                         break
-                    else:
+                    elif second_hand_bust != 1:
                         print("Your second hand tied with the dealer. Your bet was returned.")
                         money += bet
+                        break
+                    else:
                         break
 
             else:
@@ -300,7 +302,7 @@ while money > 0:
                             print(' and ' + player_hand[i+1], end = '')
                         print('\n', end='')
                         break
-                    elif player_action.upper() == 'STAND':
+                    elif player_action.upper() == 'STAND' or player_action.upper() == 'STAY':
                         print("You didn't draw a card.")
                         main_hand_end = 1
                         break
@@ -356,7 +358,7 @@ while money > 0:
                                         print(' and ' + player_hand[i+1], end = '')
                                     print('\n', end = '')
                                     break
-                                elif first_hand_action.upper() == 'STAND':
+                                elif first_hand_action.upper() == 'STAND' or first_hand_action.upper() == 'STAY':
                                     print("You didn't draw a card on your first hand.")
                                     first_hand_end = 1
                                     break
@@ -384,12 +386,26 @@ while money > 0:
                                         print(' and ' + split_hand[i+1], end = '')
                                     print("\n", end='')
                                     break
-                                elif second_hand_action.upper() == 'STAND':
+                                elif second_hand_action.upper() == 'STAND' or second_hand_action.upper() == 'STAY':
                                     print("You didn't draw a card on your second hand.")
                                     second_hand_end = 1
                                     break
                                 else:
                                     print("Please type out the action.")
+                        if bot_card_value >= 17:
+                            print('The dealer stands and does not draw a card.')
+                        elif bot_card_value < 17:
+                            print('The Dealer is drawing', end=' ')
+                            time.sleep(0.5)
+                            print('.', end=' ')
+                            time.sleep(0.5)
+                            print('.', end=" ")
+                            time.sleep(0.5)
+                            print('.')
+                            time.sleep(0.5)
+                            card_selector = random.randint(0, len(used_deck)-1)
+                            bot_hand.append(used_deck[card_selector])
+                            used_deck.pop(card_selector)
 
                     else:
                         while True:
@@ -416,7 +432,7 @@ while money > 0:
                                     print(' and ' + player_hand[i+1], end = '')
                                 print('\n', end = '')
                                 break
-                            elif player_action.upper() == 'STAND':
+                            elif player_action.upper() == 'STAND' or player_action.upper() == 'STAY':
                                 print("You didn't draw a card.")
                                 main_hand_end = 1
                                 break
