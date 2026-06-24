@@ -114,6 +114,8 @@ while True:
                             print('That was the incorrect word!')
                             instant_lose = 1
                             break
+                        elif not guess.isalpha():
+                            print('Please guess a letter!')
                         else:
                             print('Wrong amount of letters!')
                 guesses.append(guess)
