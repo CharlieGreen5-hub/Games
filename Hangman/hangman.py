@@ -131,7 +131,7 @@ while True:
                     if instant_win == 1:
                         print("You guessed the word! You got " + str(mistakes) + " guesses wrong.")
                         while True:
-                            exit_choice = input('Play again? (Y/N)\n> ')
+                            exit_choice = input('Play again? (Y/N)\n> ').upper()
                             if exit_choice == 'Y':
                                 break
                             elif exit_choice == 'N':
@@ -141,7 +141,7 @@ while True:
                     elif instant_lose == 1:
                         print('You lost! The word was ' + word + '.')
                         while True:
-                            exit_choice = input('Play again? (Y/N)\n> ')
+                            exit_choice = input('Play again? (Y/N)\n> ').upper()
                             if  exit_choice == 'Y':
                                 break
                             elif exit_choice == 'N':
@@ -157,7 +157,7 @@ while True:
                         print(line)
                     print("You win! You got " + str(mistakes) + " guesses wrong.")
                     while True:
-                        exit_choice = input('Play again? (Y/N)\n> ')
+                        exit_choice = input('Play again? (Y/N)\n> ').upper()
                         if exit_choice == 'Y':
                             break
                         elif exit_choice == 'N':
@@ -169,7 +169,7 @@ while True:
                         print(line)
                     print("You lost! The word was " + word + '.')
                     while True:
-                        exit_choice = input('Play again? (Y/N)\n> ')
+                        exit_choice = input('Play again? (Y/N)\n> ').upper()
                         if exit_choice == 'Y':
                             break
                         elif exit_choice == 'N':
