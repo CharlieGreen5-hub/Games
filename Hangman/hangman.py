@@ -1,8 +1,9 @@
 import random
 import time
 import sys
+import os
 
-words = ["BICYCLE", "LUGGAGE", "SUBWAY", "UMBRELLA", "PASSPORT", "CALENDAR", "KEYHOLE", "BACKPACK", "HEADLIGHT", "MAGNIFYING", "BLIZZARD", "MAGNIFYING", "BLIZZARD", "VOLCANO", "WILDERNESS", "THUNDER","HURRICANE", "ECLIPSE", "GLACIER", "WATERFALL", "TORNADO", "AVALANCHE", "CHAMELEON", "PLATYPUS", "GORILLA", "FLAMINGO", "DOLPHIN", "SCORPION", "SQUIRREL", "OCTOPUS", "KANGAROO", "CHEETAH", "SPAGHETTI", "PINEAPPLE", "CHOCOLATE", "BARBECUE", "CINNAMON", "GUACAMOLE", "AVOCADO", "CROISSANT", "BROCOLLI", "SANDWICH", "WHISPER", "JOURNEY", "ADVENTURE", "MYSTERY", "LAUGHTER", "TREASURE", "CARNIVAL", "FESTIVAL", "GYMNASTICS", "ASTRONAUT"]
+words = ["BICYCLE", "LUGGAGE", "SUBWAY", "UMBRELLA", "PASSPORT", "CALENDAR", "KEYHOLE", "BACKPACK", "HEADLIGHT", "MAGNIFYING", "BLIZZARD", "VOLCANO", "WILDERNESS", "THUNDER","HURRICANE", "ECLIPSE", "GLACIER", "WATERFALL", "TORNADO", "AVALANCHE", "CHAMELEON", "PLATYPUS", "GORILLA", "FLAMINGO", "DOLPHIN", "SCORPION", "SQUIRREL", "OCTOPUS", "KANGAROO", "CHEETAH", "SPAGHETTI", "PINEAPPLE", "CHOCOLATE", "BARBECUE", "CINNAMON", "GUACAMOLE", "AVOCADO", "CROISSANT", "BROCOLLI", "SANDWICH", "WHISPER", "JOURNEY", "ADVENTURE", "MYSTERY", "LAUGHTER", "TREASURE", "CARNIVAL", "FESTIVAL", "GYMNASTICS", "ASTRONAUT"]
 
 
 symbols = {0:("  ═╦═══╗",
@@ -35,11 +36,13 @@ symbols = {0:("  ═╦═══╗",
                "  / \\  ╩")}
 
 while True:
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("Welcome to Bumblebee's hangman! Press [I] for instructions and to view the wordlist, [C] to input a custom wordlist, or [ENTER] to play with the default list.")
     init_prompt = input("> ")
     if init_prompt.upper() == "I":
         print("""1) Type in one letter at a time
-        
+    2) You may guess the word on your turn, but if you are wrong, you will lose.
+    3) After the sixth mistake, the hangman drawing will be complete and you will lose.
         
         """)
         time.sleep(0.5)
@@ -63,9 +66,9 @@ while True:
                     else:
                         if len(input_word) < 3:
                             print("Word not long enough! Please input a longer word!")
-                        elif input_word in words:
+                        elif input_word.upper() in words:
                             print("This word has already been added to the list!")
-                        elif input_word.isalpha() == 'False':
+                        elif not input_word.isalpha():
                             print("Please do not input spaces, numbers, or special characters!")
                         else:
                             words.append(input_word.upper())
@@ -82,6 +85,9 @@ while True:
             hangman_word_selector = random.randint(0, len(words) - 1)
             word = words[hangman_word_selector]
             mistakes = 0
+            instant_win = 0
+            instant_lose = 0
+            guesses = []
             attempt = []
             for space in range(len(word)):
                 attempt.append("_")
@@ -96,14 +102,22 @@ while True:
                     print(attempt[char], end=" ")
                 while True:
                     guess = input("\nGuess a letter: ").upper()
-                    if guess.isalpha() and guess not in attempt and len(guess) == 1:
+                    if guess.isalpha() and guess not in guesses and len(guess) == 1:
                         break
                     else:
-                        if guess.isalpha():
+                        if guess.isalpha() and guess not in guesses and guess == word:
+                            instant_win = 1
+                            break
+                        elif guess in guesses and guess.isalpha():
                             print('You have guessed this letter already.')
+                        elif len(guess) == len(word):
+                            print('That was the incorrect word!')
+                            instant_lose = 1
+                            break
                         else:
-                            print('Please enter a singular letter.')
-                if guess in word:
+                            print('Wrong amount of letters!')
+                guesses.append(guess)
+                if guess in word and instant_win == 0 and instant_lose == 0:
                     if word.count(guess) > 1:
                         for letter in range(len(word)):
                             if guess == word[letter]:
@@ -114,26 +128,52 @@ while True:
                         attempt[position] = word[position]
                         print('The letter ' + guess + ' was in the word.')
                 else:
-                    print('The letter was not in the word.')
+                    if instant_win == 1:
+                        print("You guessed the word! You got " + str(mistakes) + " guesses wrong.")
+                        while True:
+                            exit_choice = input('Play again? (Y/N)\n> ')
+                            if exit_choice == 'Y':
+                                break
+                            elif exit_choice == 'N':
+                                print('Thanks for playing!')
+                                sys.exit(0)
+                        break
+                    elif instant_lose == 1:
+                        print('You lost! The word was ' + word + '.')
+                        while True:
+                            exit_choice = input('Play again? (Y/N)\n> ')
+                            if  exit_choice == 'Y':
+                                break
+                            elif exit_choice == 'N':
+                                print('Thanks for playing!')
+                                sys.exit(0)
+                        break
+                    else:
+                        print('The letter was not in the word.')
                     mistakes += 1
                 if "_" not in attempt:
                     print("════════════════════")
                     for line in symbols[mistakes]:
                         print(line)
                     print("You win! You got " + str(mistakes) + " guesses wrong.")
-                    if input('Play again?\n> ') == 'Y':
-                        break
-                    else:
-                        print('Thanks for playing!')
-                        sys.exit(0)
+                    while True:
+                        exit_choice = input('Play again? (Y/N)\n> ')
+                        if exit_choice == 'Y':
+                            break
+                        elif exit_choice == 'N':
+                            print('Thanks for playing!')
+                            sys.exit(0)
                 if mistakes == 6:
                     print("════════════════════")
                     for line in symbols[mistakes]:
                         print(line)
-                    print("You lost! The word was " + word)
-                    if input('Play again?\n> ') == 'Y':
-                        break
-                    else:
-                        print('Thanks for playing!')
-                        sys.exit(0)
-
+                    print("You lost! The word was " + word + '.')
+                    while True:
+                        exit_choice = input('Play again? (Y/N)\n> ')
+                        if exit_choice == 'Y':
+                            break
+                        elif exit_choice == 'N':
+                            print('Thanks for playing!')
+                            sys.exit(0)
+                    break
+            break
