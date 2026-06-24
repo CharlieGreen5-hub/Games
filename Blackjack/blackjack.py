@@ -501,7 +501,7 @@ while money > 0:
                     print('\n', end='')
                     time.sleep(1)
 
-print('You ran out of money. Type "R" to reset.')
+print('You ran out of money. Type "R" to reset your money!')
 reset = input('> ')
 if reset == 'R':
     money = 500
