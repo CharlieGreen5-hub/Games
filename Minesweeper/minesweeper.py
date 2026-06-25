@@ -1,0 +1,62 @@
+import random
+
+unseen_matrix = [[0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0]]
+displayed_matrix = [[-1,-1,-1,-1,-1,-1,-1,-1],
+                    [-1,-1,-1,-1,-1,-1,-1,-1],
+                    [-1,-1,-1,-1,-1,-1,-1,-1],
+                    [-1,-1,-1,-1,-1,-1,-1,-1],
+                    [-1,-1,-1,-1,-1,-1,-1,-1],
+                    [-1,-1,-1,-1,-1,-1,-1,-1],
+                    [-1,-1,-1,-1,-1,-1,-1,-1],
+                    [-1,-1,-1,-1,-1,-1,-1,-1]]
+
+def print_board(board):
+    for i, row in enumerate(board):
+        row_str = ""
+        if i == 0:
+            print('┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐')
+            for column in row:
+                if column == -1:
+                    row_str += "│     "
+                else:
+                    row_str += "│  " + str(column) + "  "
+            row_str += "│"
+            print(row_str)
+        else:
+            print("├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤")
+            for column in row:
+                if column == -1:
+                    row_str += "│     "
+                else:
+                    row_str += "│  " + str(column) + "  "
+            row_str += "│"
+            print(row_str)
+    print('└─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘')
+
+mines = []
+
+print("Welcome to Bumblebee's Minesweeper! Press [I] for instructions, or [ENTER] to play!.")
+init_prompt = input("> ")
+if init_prompt == "I":
+    print("[INSTRUCTIONS WILL BE HERE]")
+
+while len(mines) < 10:
+    mine_x = random.randint(0,7)
+    mine_y = random.randint(0,7)
+    if str(mine_x) + str(mine_y) not in mines:
+        mines.append(str(mine_x) + str(mine_x))
+        unseen_matrix[mine_x][mine_y] = -1
+
+
+
+
+print_board(displayed_matrix)
+
+
