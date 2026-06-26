@@ -56,6 +56,62 @@ def print_board(board):
         print("┴─────", end="")
     print("┘")
 
+def flood_fill(row, col):
+    # Top left
+    flood_fill_cells = [(row, col)]
+    checked = []
+
+    while len(flood_fill_cells) >= 1:
+        temp_flood_fill_cells = []
+        if (flood_fill_cells[-1][-2], flood_fill_cells[-1][-1]) not in checked:
+            checked.append((flood_fill_cells[-1][-2], flood_fill_cells[-1][-1]))
+            if flood_fill_cells[-1][-2] - 1 >= 0 and flood_fill_cells[-1][-1] - 1 >= 0:
+                displayed_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] - 1]= unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] - 1]
+                if unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] - 1] == '0':
+                    temp_flood_fill_cells.append((flood_fill_cells[-1][-2] - 1, flood_fill_cells[-1][-1] - 1))
+            # Left
+            if flood_fill_cells[-1][-1] - 1 >= 0:
+                displayed_matrix[flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] - 1] = unseen_matrix [flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] - 1]
+                if unseen_matrix[flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] - 1] == '0':
+                    temp_flood_fill_cells.append((flood_fill_cells[-1][-2], flood_fill_cells[-1][-1] - 1))
+            # Bottom Left
+            if flood_fill_cells[-1][-2] + 1 <= board_size and flood_fill_cells[-1][-1] - 1 >= 0:
+                displayed_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] - 1] = unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] - 1]
+                if unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] - 1] == '0':
+                    temp_flood_fill_cells.append((flood_fill_cells[-1][-2] + 1, flood_fill_cells[-1][-1] - 1))
+            # Bottom
+            if flood_fill_cells[-1][-2] + 1 <= board_size:
+                displayed_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1]] = unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1]]
+                if unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1]] == '0':
+                    temp_flood_fill_cells.append((flood_fill_cells[-1][-2] + 1, flood_fill_cells[-1][-1]))
+            # Bottom right
+            if flood_fill_cells[-1][-2] + 1 <= board_size and flood_fill_cells[-1][-1] + 1 <= board_size:
+                displayed_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] + 1] = unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] + 1]
+                if unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] + 1] == '0':
+                    temp_flood_fill_cells.append((flood_fill_cells[-1][-2] + 1, flood_fill_cells[-1][-1] + 1))
+            # Right
+            if flood_fill_cells[-1][-1] + 1 <= board_size:
+                displayed_matrix[flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] + 1] = unseen_matrix[flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] + 1]
+                if unseen_matrix[flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] + 1] == '0':
+                    temp_flood_fill_cells.append((flood_fill_cells[-1][-2], flood_fill_cells[-1][-1] + 1))
+            # Top right
+            if flood_fill_cells[-1][-2] - 1 >= 0 and flood_fill_cells[-1][-1] + 1 <= board_size:
+                displayed_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] + 1] = unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] + 1]
+                if unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] + 1] == '0':
+                    temp_flood_fill_cells.append((flood_fill_cells[-1][-2] - 1, flood_fill_cells[-1][-1] + 1))
+            # Top
+            if flood_fill_cells[-1][-2] - 1 >= 0:
+                displayed_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1]] = unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1]]
+                if unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1]] == '0':
+                    temp_flood_fill_cells.append((flood_fill_cells[-1][-2] - 1, flood_fill_cells[-1][-1]))
+            flood_fill_cells.pop(-1)
+            flood_fill_cells.extend(temp_flood_fill_cells)
+        else:
+            flood_fill_cells.pop(-1)
+    print_board(displayed_matrix)
+
+
+
 mines = []
 
 print("Welcome to Bumblebee's Minesweeper! Press [I] for instructions, or [ENTER] to play!.")
@@ -89,9 +145,9 @@ else:
     while True:
         number_of_mines = input("How many mines? Input nothing to use the default for this board size.\n> ")
         if number_of_mines.isdigit():
-            if int(number_of_mines) > (board_size+1)*(board_size+1)/2:
+            if int(number_of_mines) > default_board_mines[board_size] * 2:
                 print('Too many mines!')
-            elif int(number_of_mines) < (board_size+1)*(board_size+1)/10:
+            elif int(number_of_mines) < default_board_mines[board_size] / 2:
                 print('Too few mines!')
             else:
                 number_of_mines = int(number_of_mines)
@@ -112,10 +168,10 @@ else:
             else:
                 mine_first_coordinates = []
                 mine_first_coordinates.append(alphabet_values[first_coordinates[0]])
-                mine_first_coordinates.append(int(first_coordinates[1]))
+                mine_first_coordinates.append(int(first_coordinates[1]) - 1)
                 break
 
-
+    # Mine randomising
     while len(mines) < number_of_mines:
         mine_x = random.randint(0,board_size)
         mine_y = random.randint(0,board_size)
@@ -124,10 +180,12 @@ else:
             mines.append([mine_x, mine_y])
             unseen_matrix[mine_x][mine_y] = -2
 
+    # Number of mines around each square.
     for i, row in enumerate(unseen_matrix):
         for j, column in enumerate(row):
             if column != -2:
                 mine_counter = 0
+                # Top left
                 if i - 1 >= 0 and j - 1 >= 0:
                     if unseen_matrix[i-1][j-1] == -2:
                         mine_counter += 1
@@ -160,6 +218,9 @@ else:
                     if unseen_matrix[i-1][j] == -2:
                         mine_counter += 1
                 unseen_matrix[i][j] = str(mine_counter)
+    displayed_matrix[mine_first_coordinates[0]][mine_first_coordinates[1]] = unseen_matrix[mine_first_coordinates[0]][mine_first_coordinates[1]]
+    # if unseen_matrix[mine_first_coordinates[0]][mine_first_coordinates[1]] == '0':
+    flood_fill(mine_first_coordinates[0], mine_first_coordinates[1])
 
 
 
