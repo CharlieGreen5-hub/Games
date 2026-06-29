@@ -15,7 +15,10 @@ def print_board(board):
     # print("      1     2     3     4     5     6     7     8")
     print("   ", end="")
     for number in range(board_size + 1):
-        print("   " + str(number + 1) + "  ", end="")
+        if number > 10:
+            print("  " + str(number + 1) + " ", end="")
+        else:
+            print("   " + str(number + 1) + "  ", end="")
     print('\n', end='')
     for i, row in enumerate(board):
         row_str = " " + column_alphabet[i] + " "
@@ -169,6 +172,7 @@ while True:
                 break
         else:
             number_of_mines = default_board_mines[board_size]
+            print(str(number_of_mines))
             break
     # squares_left = (board_size + 1) ** 2 - number_of_mines
 
@@ -246,7 +250,7 @@ while True:
         squares_left = 0
         for row in displayed_matrix:
             for column in row:
-                if column == -1:
+                if column == -1 or column == 'F':
                     squares_left += 1
         squares_left -= number_of_mines
         if squares_left == 0:
@@ -257,7 +261,9 @@ while True:
         input_square_split = input_square.split()
         if len(input_square.split()) == 1 and len(input_square) == 2 or len(input_square) == 3:
             if input_square[1:].isdigit():
-                if input_square[0].upper() not in alphabet_values or int(input_square[1:]) - 1 not in column_alphabet:
+                col_input = int(input_square[1:]) - 1
+                row_input = alphabet_values[input_square[0].upper()]
+                if row_input > board_size or col_input < 0 or col_input > board_size:
                     print('Please type a valid coordinate!')
                 else:
                     input_coordinates = (alphabet_values[input_square[0].upper()], int(input_square[1:]) - 1)
@@ -278,7 +284,9 @@ while True:
             else:
                 print('Please type a valid coordinate!')
         elif len(input_square.split()) == 2 and input_square[-1].upper() == 'F' and input_square[0].upper() in alphabet_values and input_square_split[0][1:].isdigit():
-            if int(input_square_split[0][1:]) in column_alphabet:
+            row_input = alphabet_values[input_square_split[0][0].upper()]
+            col_input = int(input_square_split[0][1:]) - 1
+            if 0 <= row_input <= board_size and 0 <= col_input <= board_size:
                 if flag_number < number_of_mines:
                     input_coordinates = (alphabet_values[input_square[0].upper()], int(input_square_split[0][1:]) - 1)
                     if displayed_matrix[input_coordinates[0]][input_coordinates[1]] == -1:
@@ -289,7 +297,9 @@ while True:
                 else:
                     print('Too many flags!')
         elif len(input_square.split()) == 2 and input_square[-1].upper() == 'R' and input_square[0].upper() in alphabet_values and input_square_split[0][1:].isdigit():
-            if int(input_square_split[0][1:]) in column_alphabet:
+            row_input = alphabet_values[input_square_split[0][0].upper()]
+            col_input = int(input_square_split[0][1:]) - 1
+            if 0 <= row_input <= board_size and 0 <= col_input <= board_size:
                 input_coordinates = (alphabet_values[input_square[0].upper()], int(input_square_split[0][1:]) - 1)
                 if displayed_matrix[input_coordinates[0]][input_coordinates[1]] == 'F':
                     displayed_matrix[input_coordinates[0]][input_coordinates[1]] = -1
