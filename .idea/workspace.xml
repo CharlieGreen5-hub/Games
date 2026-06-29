@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a30ff472-5383-4643-abc5-e9ab3612025e" name="Changes" comment="Bug fixes, game-end condition was previously broken.">
-      <change afterPath="$PROJECT_DIR$/Blackjack/Blackjack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/charl/PycharmProjects/Games/Minesweeper",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
@@ -130,6 +131,7 @@
       <workItem from="1782536525760" duration="110000" />
       <workItem from="1782695702914" duration="2018000" />
       <workItem from="1782697751063" duration="1252000" />
+      <workItem from="1782699250142" duration="453000" />
     </task>
     <task id="LOCAL-00001" summary="Card Dealing implemented, game loop started.">
       <option name="closed" value="true" />
