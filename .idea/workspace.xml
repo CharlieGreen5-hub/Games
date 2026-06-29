@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a30ff472-5383-4643-abc5-e9ab3612025e" name="Changes" comment="Bug fixes, game-end condition was previously broken.">
+      <change afterPath="$PROJECT_DIR$/Blackjack/Blackjack" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;CharlieGreen5-hub&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/CharlieGreen5-hub/Games.git&quot;,
+    &quot;accountId&quot;: &quot;56e43820-dab6-4d3a-b7e9-6155c8abc21f&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3Dv33b575MgyPzuQHVbUzIGcjDV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.blackjack.executor": "Run",
+    "Python.hangman.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.minesweeper.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "git-widget-placeholder": "Merging main",
+    "last_opened_file_path": "C:/Users/charl/PycharmProjects/Games/Minesweeper",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\charl\PycharmProjects\Games\Minesweeper" />
+      <recent name="C:\Users\charl\PycharmProjects\Games\Hangman" />
+      <recent name="C:\Users\charl\PycharmProjects\Games" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\charl\PycharmProjects\Games" />
+      <recent name="C:\Users\charl\PycharmProjects\Games\Blackjack" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.31033.139" />
+        <option value="bundled-python-sdk-2653e85de345-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.31033.139" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a30ff472-5383-4643-abc5-e9ab3612025e" name="Changes" comment="" />
+      <created>1779148517831</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1779148517831</updated>
+      <workItem from="1779148518886" duration="4465000" />
+      <workItem from="1779236073412" duration="686000" />
+      <workItem from="1779276013364" duration="3282000" />
+      <workItem from="1779404364891" duration="2356000" />
+      <workItem from="1779427707228" duration="658000" />
+      <workItem from="1779766572292" duration="28000" />
+      <workItem from="1779766650630" duration="390000" />
+      <workItem from="1779767065457" duration="89000" />
+      <workItem from="1779925029277" duration="2715000" />
+      <workItem from="1779943837833" duration="603000" />
+      <workItem from="1780010140042" duration="958000" />
+      <workItem from="1780032913811" duration="4214000" />
+      <workItem from="1780126948999" duration="3087000" />
+      <workItem from="1780276223151" duration="7584000" />
+      <workItem from="1780388010180" duration="2463000" />
+      <workItem from="1780440618140" duration="2541000" />
+      <workItem from="1780448553989" duration="2344000" />
+      <workItem from="1780467867460" duration="1487000" />
+      <workItem from="1780614893956" duration="3403000" />
+      <workItem from="1780732191871" duration="14204000" />
+      <workItem from="1781000487828" duration="605000" />
+      <workItem from="1781086506409" duration="3241000" />
+      <workItem from="1781170943771" duration="1270000" />
+      <workItem from="1781340463325" duration="7528000" />
+      <workItem from="1781480387437" duration="6604000" />
+      <workItem from="1781576041276" duration="14234000" />
+      <workItem from="1781740591496" duration="9790000" />
+      <workItem from="1781833148636" duration="980000" />
+      <workItem from="1781860819024" duration="6498000" />
+      <workItem from="1782028507611" duration="4569000" />
+      <workItem from="1782039068131" duration="4196000" />
+      <workItem from="1782092567110" duration="7295000" />
+      <workItem from="1782179939199" duration="25562000" />
+      <workItem from="1782339995472" duration="4698000" />
+      <workItem from="1782358975597" duration="14125000" />
+      <workItem from="1782428259075" duration="14111000" />
+      <workItem from="1782474225189" duration="20000" />
+      <workItem from="1782536525760" duration="110000" />
+      <workItem from="1782695702914" duration="2018000" />
+      <workItem from="1782697751063" duration="1252000" />
+    </task>
+    <task id="LOCAL-00001" summary="Card Dealing implemented, game loop started.">
+      <option name="closed" value="true" />
+      <created>1779936422323</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779936422323</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Bot hand dealing implemented">
+      <option name="closed" value="true" />
+      <created>1780033212918</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780033212919</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Hand Value Calculation">
+      <option name="closed" value="true" />
+      <created>1780278064991</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1780278064991</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Waiting and loading text">
+      <option name="closed" value="true" />
+      <created>1780313038673</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1780313038673</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Symbols Reworked, Bot Value Calculated">
+      <option name="closed" value="true" />
+      <created>1780616322798</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1780616322798</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Hitting and Staying Implemented">
+      <option name="closed" value="true" />
+      <created>1780741922007</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1780741922007</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Winning and Losing conditions and Dealer Actions">
+      <option name="closed" value="true" />
+      <created>1781089650707</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1781089650707</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Splitting and writing money added">
+      <option name="closed" value="true" />
+      <created>1781679527842</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1781679527842</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Doubling down implemented, splitting win/loss cases completed.">
+      <option name="closed" value="true" />
+      <created>1782092652308</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1782092652308</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Bug fixes, endless outputs can no longer occur.">
+      <option name="closed" value="true" />
+      <created>1782185666063</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1782185666063</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Hangman project created, word list and character added.">
+      <option name="closed" value="true" />
+      <created>1782211124183</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1782211124183</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Custom word lists implemented, game loop started.">
+      <option name="closed" value="true" />
+      <created>1782213289038</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1782213289038</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Game loop completed, some win/loss conditions added, changes to ensure numbers cannot be added to custom list.">
+      <option name="closed" value="true" />
+      <created>1782284576276</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1782284576276</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Project completed! All identified bugs removed.">
+      <option name="closed" value="true" />
+      <created>1782284623929</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1782284623929</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Instant win/loss conditions added and instructions">
+      <option name="closed" value="true" />
+      <created>1782293966878</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1782293966878</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Minor fix to detect lower-case inputs.">
+      <option name="closed" value="true" />
+      <created>1782294419015</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1782294419015</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Minor fix for better response to wrong inputs.">
+      <option name="closed" value="true" />
+      <created>1782296133355</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1782296133355</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Mines generation, board layout generated.">
+      <option name="closed" value="true" />
+      <created>1782354378510</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1782354378510</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Square labels added to board.">
+      <option name="closed" value="true" />
+      <created>1782359558330</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1782359558330</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Custom board sizes implemented">
+      <option name="closed" value="true" />
+      <created>1782384706833</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1782384706833</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Flood-filling function added when block of safe tiles uncovered.">
+      <option name="closed" value="true" />
+      <created>1782465443548</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1782465443548</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Game Loop, Win/loss conditions added. Minesweeper complete!">
+      <option name="closed" value="true" />
+      <created>1782473173563</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1782473173563</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Bug fixes, game-end condition was previously broken.">
+      <option name="closed" value="true" />
+      <created>1782697587221</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1782697587221</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Bug fixes, game-end condition was previously broken.">
+      <option name="closed" value="true" />
+      <created>1782698499728</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1782698499728</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Blackjack&#10;&#10;First commit, betting input complete." />
+    <MESSAGE value="Card Dealing implemented, game loop started." />
+    <MESSAGE value="Bot hand dealing implemented" />
+    <MESSAGE value="Hand Value Calculation" />
+    <MESSAGE value="Waiting and loading text" />
+    <MESSAGE value="Symbols Reworked, Bot Value Calculated" />
+    <MESSAGE value="Hitting and Staying Implemented" />
+    <MESSAGE value="Winning and Losing conditions and Dealer Actions" />
+    <MESSAGE value="Splitting and writing money added" />
+    <MESSAGE value="Doubling down implemented, splitting win/loss cases completed." />
+    <MESSAGE value="Bug fixes, endless outputs can no longer occur." />
+    <MESSAGE value="Hangman project created, word list and character added." />
+    <MESSAGE value="Custom word lists implemented, game loop started." />
+    <MESSAGE value="Game loop completed, some win/loss conditions added, changes to ensure numbers cannot be added to custom list." />
+    <MESSAGE value="Project completed! All identified bugs removed." />
+    <MESSAGE value="Instant win/loss conditions added and instructions" />
+    <MESSAGE value="Minor fix to detect lower-case inputs." />
+    <MESSAGE value="Minor fix for better response to wrong inputs." />
+    <MESSAGE value="Mines generation, board layout generated." />
+    <MESSAGE value="Square labels added to board." />
+    <MESSAGE value="Custom board sizes implemented" />
+    <MESSAGE value="Flood-filling function added when block of safe tiles uncovered." />
+    <MESSAGE value="Game Loop, Win/loss conditions added. Minesweeper complete!" />
+    <MESSAGE value="Bug fixes, game-end condition was previously broken." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes, game-end condition was previously broken." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Minesweeper/minesweeper.py</url>
+          <line>172</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Games$main.coverage" NAME="main Coverage Results" MODIFIED="1782113729616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Blackjack" />
+    <SUITE FILE_PATH="coverage/Games$minesweeper.coverage" NAME="minesweeper Coverage Results" MODIFIED="1782697452309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Minesweeper" />
+    <SUITE FILE_PATH="coverage/Games$blackjack.coverage" NAME="blackjack Coverage Results" MODIFIED="1782474237528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Blackjack" />
+    <SUITE FILE_PATH="coverage/Games$hangman.coverage" NAME="hangman Coverage Results" MODIFIED="1782296106250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hangman" />
+  </component>
+</project>
