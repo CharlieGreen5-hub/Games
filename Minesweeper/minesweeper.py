@@ -70,7 +70,7 @@ def flood_fill(row, col):
                     displayed_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] - 1]= unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] - 1]
                     if unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] - 1] == '0':
                         temp_flood_fill_cells.append((flood_fill_cells[-1][-2] - 1, flood_fill_cells[-1][-1] - 1))
-                        squares_left -= 1
+                    # squares_left -= 1
 
             # Left
             if flood_fill_cells[-1][-1] - 1 >= 0:
@@ -78,49 +78,49 @@ def flood_fill(row, col):
                     displayed_matrix[flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] - 1] = unseen_matrix [flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] - 1]
                     if unseen_matrix[flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] - 1] == '0':
                         temp_flood_fill_cells.append((flood_fill_cells[-1][-2], flood_fill_cells[-1][-1] - 1))
-                        squares_left -= 1
+                    # squares_left -= 1
             # Bottom Left
             if flood_fill_cells[-1][-2] + 1 <= board_size and flood_fill_cells[-1][-1] - 1 >= 0:
                 if unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] - 1] != -2:
                     displayed_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] - 1] = unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] - 1]
                     if unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] - 1] == '0':
                         temp_flood_fill_cells.append((flood_fill_cells[-1][-2] + 1, flood_fill_cells[-1][-1] - 1))
-                        squares_left -= 1
+                    # squares_left -= 1
             # Bottom
             if flood_fill_cells[-1][-2] + 1 <= board_size:
                 if unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1]] != -2:
                     displayed_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1]] = unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1]]
                     if unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1]] == '0':
                         temp_flood_fill_cells.append((flood_fill_cells[-1][-2] + 1, flood_fill_cells[-1][-1]))
-                        squares_left -= 1
+                    # squares_left -= 1
             # Bottom right
             if flood_fill_cells[-1][-2] + 1 <= board_size and flood_fill_cells[-1][-1] + 1 <= board_size:
                 if unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] + 1] != -2:
                     displayed_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] + 1] = unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] + 1]
                     if unseen_matrix[flood_fill_cells[-1][-2] + 1][flood_fill_cells[-1][-1] + 1] == '0':
                         temp_flood_fill_cells.append((flood_fill_cells[-1][-2] + 1, flood_fill_cells[-1][-1] + 1))
-                        squares_left -= 1
+                    # squares_left -= 1
             # Right
             if flood_fill_cells[-1][-1] + 1 <= board_size:
                 if unseen_matrix[flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] + 1] != -2:
                     displayed_matrix[flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] + 1] = unseen_matrix[flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] + 1]
                     if unseen_matrix[flood_fill_cells[-1][-2]][flood_fill_cells[-1][-1] + 1] == '0':
                         temp_flood_fill_cells.append((flood_fill_cells[-1][-2], flood_fill_cells[-1][-1] + 1))
-                        squares_left -= 1
+                    # squares_left -= 1
             # Top right
             if flood_fill_cells[-1][-2] - 1 >= 0 and flood_fill_cells[-1][-1] + 1 <= board_size:
                 if unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] + 1] != -2:
                     displayed_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] + 1] = unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] + 1]
                     if unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1] + 1] == '0':
                         temp_flood_fill_cells.append((flood_fill_cells[-1][-2] - 1, flood_fill_cells[-1][-1] + 1))
-                        squares_left -= 1
+                    # squares_left -= 1
             # Top
             if flood_fill_cells[-1][-2] - 1 >= 0:
                 if unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1]] != -2:
                     displayed_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1]] = unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1]]
                     if unseen_matrix[flood_fill_cells[-1][-2] - 1][flood_fill_cells[-1][-1]] == '0':
                         temp_flood_fill_cells.append((flood_fill_cells[-1][-2] - 1, flood_fill_cells[-1][-1]))
-                        squares_left -= 1
+                    # squares_left -= 1
             flood_fill_cells.pop(-1)
             flood_fill_cells.extend(temp_flood_fill_cells)
         else:
@@ -170,7 +170,7 @@ while True:
         else:
             number_of_mines = default_board_mines[board_size]
             break
-    squares_left = board_size ** 2 - number_of_mines
+    # squares_left = (board_size + 1) ** 2 - number_of_mines
 
     print_board(displayed_matrix)
     while True:
@@ -186,7 +186,7 @@ while True:
                     mine_first_coordinates = []
                     mine_first_coordinates.append(alphabet_values[first_coordinates[0]])
                     mine_first_coordinates.append(int(first_coordinates[1]) - 1)
-                    squares_left -= 1
+                    # squares_left -= 1
                     break
             else:
                 print("Please type a valid coordinate!")
@@ -243,6 +243,12 @@ while True:
     flood_fill(mine_first_coordinates[0], mine_first_coordinates[1])
     while True:
         print_board(displayed_matrix)
+        squares_left = 0
+        for row in displayed_matrix:
+            for column in row:
+                if column == -1:
+                    squares_left += 1
+        squares_left -= number_of_mines
         if squares_left == 0:
             print('\nYou win!')
             break
@@ -264,7 +270,7 @@ while True:
                             displayed_matrix[input_coordinates[0]][input_coordinates[1]] = unseen_matrix[input_coordinates[0]][input_coordinates[1]]
                             if unseen_matrix[input_coordinates[0]][input_coordinates[1]] == "0":
                                 flood_fill(input_coordinates[0], input_coordinates[1])
-                            squares_left -= 1
+                            # squares_left -= 1
                     elif displayed_matrix[input_coordinates[0]][input_coordinates[1]] == 'F':
                         print("There's a flag here! Remove it first!")
                     else:
@@ -274,7 +280,7 @@ while True:
         elif len(input_square.split()) == 2 and input_square[-1].upper() == 'F' and input_square[0].upper() in alphabet_values and input_square_split[0][1:].isdigit():
             if int(input_square_split[0][1:]) in column_alphabet:
                 if flag_number < number_of_mines:
-                    input_coordinates = (alphabet_values[input_square[0]], int(input_square_split[0][1:]) - 1)
+                    input_coordinates = (alphabet_values[input_square[0].upper()], int(input_square_split[0][1:]) - 1)
                     if displayed_matrix[input_coordinates[0]][input_coordinates[1]] == -1:
                         displayed_matrix[input_coordinates[0]][input_coordinates[1]] = 'F'
                         flag_number += 1
